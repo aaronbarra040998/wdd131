@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Dynamic Web Fundamentals – Aarón D. Apaza</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Aarón D. Apaza. Course landing page with information about the student, Peru, and web development resources.">
+    <meta name="author" content="Aarón D. Apaza">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    
+    <!-- External JS -->
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/in/aaronbarra-dev/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener noreferrer"><i class="fas fa-book"></i> Scripture</a>
+            <a href="#"><i class="fas fa-project-diagram"></i> Final Project</a>
+        </nav>
+    </header>
+    
+    <h1> Aarón D. Apaza </h1>
+    
+    <main>
+        <section class="card">
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h2>About Me</h2>
+                    <p>My name is Aaron Barra and I am from Peru. I am passionate about technology and currently studying software development with a focus on frontend. I enjoy learning English and improving my skills every day. I love cooking, playing piano, and spending time with my family. My goal is to create innovative tech solutions.</p>
+                </div>
+                <div class="profile-image">
+                    <img src="images/profile-300.jpg" alt=" Aarón D. Apaza" width="200" height="250">
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="country-content">
+                <div class="country-image">
+                    <img src="images/Peru_bandera.png" alt="Map of Peru" width="200" height="150">
+                    <div class="flag-container">
+                        <div class="flag" aria-label="Flag of Peru"></div>
+                        <span>Flag of Peru</span>
+                    </div>
+                </div>
+                
+                <div class="country-text">
+                    <h2>Arequipa, Peru</h2>
+                    <p>Arequipa is the second largest city in Peru and is located in the southern Andes. It is surrounded by three volcanoes and is known as the "White City" because many buildings are made of volcanic stone. Arequipa is famous for its colonial architecture, traditional cuisine, and breathtaking views of the Misti volcano.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://dev.to/" target="_blank" rel="noopener noreferrer">Dev.to Community</a></li>
+                <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener noreferrer">Smashing Magazine</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS Tricks</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">Udemy</a></li>
+                <li><a href="https://placeholder.com/" target="_blank" rel="noopener noreferrer">Image Placeholder</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy;<span id="currentyear"></span> ♣ Aarón D. Apaza ♣ Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
