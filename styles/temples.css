@@ -1,0 +1,149 @@
+/* Variables de colores */
+:root {
+    --primary-color: #4d6c93;
+    --secondary-color: #7d9ec0;
+    --accent-color: #f39c12;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --header-bg: #2c3e50;
+    --footer-bg: #34495e;
+    --white: #fff;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header styles */
+header {
+    background-color: var(--header-bg);
+    color: var(--white);
+    padding: 1rem;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+#hamburger-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+/* Navigation styles */
+#main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    z-index: 1000;
+}
+
+#main-nav.active {
+    display: block;
+}
+
+#main-nav ul {
+    list-style: none;
+}
+
+#main-nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#main-nav a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    transition: background-color 0.3s;
+}
+
+#main-nav a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Gallery grid - 1 columna en móvil */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
