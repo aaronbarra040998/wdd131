@@ -1,0 +1,169 @@
+:root{
+  --red: #c8102e;           /* cabecera y footer rojo */
+  --green: #117a4b;         /* franja y acentos */
+  --card-bg: #ffffff;
+  --muted: #54595f;
+  --text: #111827;
+  --max-width: 1200px;
+  --container-pad: 1rem;
+  --radius: 8px;
+}
+
+/* Reset simple */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 var(--container-pad);
+}
+
+/* HEADER (mobile: alto y centrado) */
+.site-header{
+  background:var(--red);
+  color:white;
+}
+.header-inner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:92px; /* altura cabecera mobile para parecer grande */
+}
+.site-title{
+  margin:0;
+  font-size:2.0rem;
+  font-weight:700;
+  letter-spacing:0.6px;
+}
+
+/* Franja verde inmediatamente debajo de la cabecera */
+.header-accent{
+  height:10px;
+  background:var(--green);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
+/* HERO (imagen alta en mobile) */
+.hero{
+  position:relative;
+  width:100%;
+}
+.hero-img{
+  width:100%;
+  display:block;
+  height:520px;         /* imagen alta para mobile, como en tu screenshot */
+  object-fit:cover;
+}
+
+/* Section base (Data / Weather) */
+.section{
+  background:var(--card-bg);
+  padding:28px 0;
+  border-bottom: 4px solid rgba(200,0,40,0.03);
+}
+
+/* Títulos de sección grandes y centrados */
+.section-title{
+  text-align:center;
+  margin:0 0 18px 0;
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--text);
+}
+
+/* DATA list styles (mobile single column) */
+.data-list{
+  max-width:760px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+.data-list p{
+  margin:12px 0;
+  font-size:1rem;
+  color:var(--muted);
+  text-align:left;
+}
+.data-list .label{
+  font-weight:700;
+  margin-right:8px;
+  color:#111;
+}
+.data-list .value{ color:var(--muted); }
+
+/* WEATHER center block */
+.weather-center{
+  max-width:640px;
+  margin:0 auto;
+  text-align:center;
+  padding:0 1rem;
+}
+.weather-icon{ margin: 8px 0 20px; }
+.weather-data p{
+  margin:10px 0;
+  font-size:1rem;
+  color:var(--muted);
+}
+.weather-data .w-label{ font-weight:700; color:#111; margin-right:6px; }
+
+/* Footer: banda roja en el pie, centrado */
+.site-footer{
+  background:var(--red);
+  color:white;
+  padding:18px 0 28px;
+  margin-top:12px;
+}
+.footer-inner{ text-align:center; }
+.footer-line{ margin:6px 0; font-size:1rem; }
+.small{ font-size:0.95rem; opacity:0.95; }
+
+/* ---------- Desktop adjustments: tarjetas encima del hero (como antes) ---------- */
+@media (min-width: 992px) {
+  /* Reducir altura hero en desktop para que quede proporción */
+  .hero-img{ height:520px; }
+
+  /* Convertir Data & Weather a tarjetas absolutas sobre la imagen como en tu primer diseño */
+  .data-section{ padding-top:0; margin-top:-220px; } /* empuja la sección para que las tarjetas queden sobre la imagen */
+  .weather-section{ padding-top:0; margin-top:-120px; }
+
+  /* .container hijos se usarán para posicionar las tarjetas */
+  .data-list, .weather-center{
+    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+    box-shadow: 0 12px 40px rgba(16,24,40,0.10);
+    border:1px solid rgba(30,40,45,0.06);
+    border-radius:8px;
+    padding:20px;
+  }
+
+  /* posicionamiento absoluto de las tarjetas */
+  .data-list{
+    position:absolute;
+    left:60px;
+    top:140px;
+    width:360px;
+    max-width:40%;
+    margin:0;
+  }
+  .weather-center{
+    position:absolute;
+    right:60px;
+    top:200px;
+    width:320px;
+    margin:0;
+    text-align:left;
+  }
+
+  /* Ajustes título más pequeño en desktop (porque el header ya es grande) */
+  .section-title{ font-size:1.25rem; text-align:left; padding-left:8px; background:var(--green); color:#fff; display:inline-block; border-radius:4px; padding:8px 12px; margin-bottom:12px;}
+  .data-section .section-title{ display:block; margin:0 0 12px 0; background:var(--green); color:#fff; width:auto;}
+  .weather-section .section-title{ display:block; margin:0 0 12px 0; background:var(--green); color:#fff; width:auto;}
+}
