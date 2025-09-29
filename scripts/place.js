@@ -1,26 +1,25 @@
-// js/app.js
-document.addEventListener('DOMContentLoaded', () => {
-  const tempEl = document.getElementById('temp');
-  const windEl = document.getElementById('windSpeed');
-  const wcEl   = document.getElementById('windChill');
-  const yearEl = document.getElementById('year');
-  const lastModEl = document.getElementById('lastModified');
+// Calculate wind chill function
+function calculateWindChill(temp, windSpeed) {
+    // Formula for metric units (ºC, km/h)
+    return 13.12 + (0.6215 * temp) - (11.37 * Math.pow(windSpeed, 0.16)) + (0.3965 * temp * Math.pow(windSpeed, 0.16));
+}
 
-  const temp = parseFloat(tempEl?.textContent) || 0;   // °C
-  const wind = parseFloat(windEl?.textContent) || 0;   // km/h
-
-  // Función de una sola línea para wind chill (métrica)
-  function calculateWindChill(t, v) { return 13.12 + 0.6215 * t - 11.37 * Math.pow(v, 0.16) + 0.3965 * t * Math.pow(v, 0.16); }
-
-  // Condición métrica: T <= 10°C y V > 4.8 km/h
-  if (temp <= 10 && wind > 4.8) {
-    const wc = Math.round(calculateWindChill(temp, wind) * 10) / 10;
-    wcEl.textContent = `${wc} °C`;
-  } else {
-    wcEl.textContent = 'N/A';
-  }
-
-  // Footer dinámico
-  yearEl.textContent = new Date().getFullYear();
-  lastModEl.textContent = document.lastModified || 'Desconocida';
+// DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Set footer content
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
+    
+    // Get weather data
+    const temperature = parseFloat(document.getElementById('temperature').textContent);
+    const windSpeed = parseFloat(document.getElementById('wind-speed').textContent);
+    const windChillElement = document.getElementById('wind-chill');
+    
+    // Check if wind chill should be calculated
+    if (temperature <= 10 && windSpeed > 4.8) {
+        const windChill = calculateWindChill(temperature, windSpeed);
+        windChillElement.textContent = `${windChill.toFixed(1)} °C`;
+    } else {
+        windChillElement.textContent = 'N/A';
+    }
 });

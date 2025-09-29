@@ -1,86 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Madagascar — Place</title>
-  <link rel="stylesheet" href="/styles/place.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madagascar — Place</title>
+    <link rel="stylesheet" href="/styles/place.css">
+    <style>
+
+    </style>
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <h1 class="site-title">Madagascar</h1>
-    </div>
-    <div class="header-accent" aria-hidden="true"></div>
-  </header>
-
-  <main>
-    <section class="hero" aria-label="Imagen principal del lugar">
-      <picture>
-        <!-- Sustituye por tus WebP y fallbacks -->
-        <source type="image/webp" media="(min-width:1200px)" srcset="images/hero-large.webp">
-        <source type="image/webp" media="(min-width:600px)" srcset="images/hero-medium.webp">
-        <img src="images/hero-small.jpg" alt="Lemures en Madagascar" class="hero-img" loading="lazy">
-      </picture>
-    </section>
-
-    <!-- DATA (mobile: full width block) -->
-    <section class="section data-section" aria-labelledby="data-heading">
-      <div class="container">
-        <h2 id="data-heading" class="section-title">Data</h2>
-
-        <div class="data-list">
-          <p><span class="label">Area:</span> <span class="value">587,041 sq km</span></p>
-          <p><span class="label">Population:</span> <span class="value">27,691,018</span></p>
-          <p><span class="label">Capital:</span> <span class="value">Antananarivo</span></p>
-          <p><span class="label">Languages:</span> <span class="value">Malagasy, French</span></p>
-          <p><span class="label">Currency:</span> <span class="value">Malagasy Ariary</span></p>
-          <p><span class="label">Time Zone:</span> <span class="value">UTC+3</span></p>
-          <p><span class="label">Calling Code:</span> <span class="value">+261</span></p>
-          <p><span class="label">Internet TLD:</span> <span class="value">.mg</span></p>
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <h1 class="site-title">Madagascar</h1>
         </div>
-      </div>
-    </section>
+        <div class="header-accent" aria-hidden="true"></div>
+    </header>
 
-    <!-- WEATHER (mobile: full width block) -->
-    <section class="section weather-section" aria-labelledby="weather-heading">
-      <div class="container">
-        <h2 id="weather-heading" class="section-title">Weather</h2>
+    <main>
+        <section class="hero" aria-label="Imagen principal del lugar">
+            <picture>
+                <img src="/images/Arequipa1.jpg" 
+                     alt="Paisaje de Madagascar con lémures y baobabs" class="hero-img" loading="lazy">
+            </picture>
+        </section>
 
-        <div class="weather-center">
-          <!-- SVG icon centrado -->
-          <div class="weather-icon" aria-hidden="true">
-            <svg width="120" height="120" viewBox="0 0 64 64" role="img" xmlns="http://www.w3.org/2000/svg">
-              <title>Ícono clima</title>
-              <g fill="none" stroke="#3e3e3e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <path d="M20 40a6 6 0 0 1 0-12 7 7 0 0 1 13.7-2.2A5 5 0 0 1 44 30h-2"/>
-                <path fill="#f6c44a" stroke="none" d="M40 18a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
-                <path d="M22 46h18" stroke="#3e3e3e"/>
-                <path d="M24 50h2 M30 50h2 M36 50h2" stroke="#3e3e3e"/>
-              </g>
-            </svg>
-          </div>
+        <!-- DATA (mobile: full width block) -->
+        <section class="section data-section" aria-labelledby="data-heading">
+            <div class="container">
+                <h2 id="data-heading" class="section-title">Data</h2>
 
-          <div class="weather-data">
-            <p><span class="w-label">Temperature:</span> <strong><span id="temp">10</span> °C</strong></p>
-            <p><span class="w-label">Conditions:</span> <strong>Partly Cloudy</strong></p>
-            <p><span class="w-label">Wind:</span> <strong><span id="windSpeed">5</span> km/h</strong></p>
-            <p><span class="w-label">Wind Chill:</span> <strong><span id="windChill">—</span></strong></p>
-          </div>
+                <div class="data-list">
+                    <p><span class="label">Area:</span> <span class="value">587,041 sq km</span></p>
+                    <p><span class="label">Population:</span> <span class="value">27,691,018</span></p>
+                    <p><span class="label">Capital:</span> <span class="value">Antananarivo</span></p>
+                    <p><span class="label">Languages:</span> <span class="value">Malagasy, French</span></p>
+                    <p><span class="label">Currency:</span> <span class="value">Malagasy Ariary</span></p>
+                    <p><span class="label">Time Zone:</span> <span class="value">UTC+3</span></p>
+                    <p><span class="label">Calling Code:</span> <span class="value">+261</span></p>
+                    <p><span class="label">Internet TLD:</span> <span class="value">.mg</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEATHER (mobile: full width block) -->
+        <section class="section weather-section" aria-labelledby="weather-heading">
+            <div class="container">
+                <h2 id="weather-heading" class="section-title">Weather</h2>
+
+                <div class="weather-center">
+                    <!-- SVG icon centrado -->
+                    <div class="weather-icon" aria-hidden="true">
+                        <svg width="120" height="120" viewBox="0 0 64 64" role="img" xmlns="http://www.w3.org/2000/svg">
+                            <title>Ícono de clima parcialmente nublado</title>
+                            <g fill="none" stroke="#3e3e3e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M20 40a6 6 0 0 1 0-12 7 7 0 0 1 13.7-2.2A5 5 0 0 1 44 30h-2"/>
+                                <path fill="#f6c44a" stroke="none" d="M40 18a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
+                                <path d="M22 46h18" stroke="#3e3e3e"/>
+                                <path d="M24 50h2 M30 50h2 M36 50h2" stroke="#3e3e3e"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="weather-data">
+                        <p><span class="w-label">Temperature:</span> <strong><span id="temp">10</span> °C</strong></p>
+                        <p><span class="w-label">Conditions:</span> <strong>Partly Cloudy</strong></p>
+                        <p><span class="w-label">Wind:</span> <strong><span id="windSpeed">5</span> km/h</strong></p>
+                        <p><span class="w-label">Wind Chill:</span> <strong><span id="windChill">—</span></strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="footer-content">
+                <p class="footer-main">
+                    <span class="footer-emoji">©</span>
+                    <span id="year"></span>
+                    <span class="footer-emoji">💬</span>
+                    Rubia Magdelena Francesco
+                    <span class="footer-emoji">💬</span>
+                    <span class="footer-country">Madagascar</span>
+                </p>
+                <p class="footer-modification">
+                    Last Modification: <span id="lastModified"></span>
+                </p>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p class="footer-line">
-        &copy; <span id="year"></span> 🌺 Rubia Magdelena Francesco 🌺 Madagascar
-      </p>
-      <p class="footer-line small">Last Modification: <span id="lastModified"></span></p>
-    </div>
-  </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tempEl = document.getElementById('temp');
+            const windEl = document.getElementById('windSpeed');
+            const wcEl   = document.getElementById('windChill');
+            const yearEl = document.getElementById('year');
+            const lastModEl = document.getElementById('lastModified');
 
-  <script defer src="scripts/place.js"></script>
+            const temp = parseFloat(tempEl?.textContent) || 0;   // °C
+            const wind = parseFloat(windEl?.textContent) || 0;   // km/h
+
+            // Función de una sola línea para wind chill (métrica)
+            function calculateWindChill(t, v) { 
+                return 13.12 + 0.6215 * t - 11.37 * Math.pow(v, 0.16) + 0.3965 * t * Math.pow(v, 0.16); 
+            }
+
+            // Condición métrica: T <= 10°C y V > 4.8 km/h
+            if (temp <= 10 && wind > 4.8) {
+                const wc = Math.round(calculateWindChill(temp, wind) * 10) / 10;
+                wcEl.textContent = `${wc} °C`;
+            } else {
+                wcEl.textContent = 'N/A';
+            }
+
+            // Footer dinámico
+            yearEl.textContent = new Date().getFullYear();
+            
+            // Formatear fecha de última modificación
+            const lastModified = new Date(document.lastModified);
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            };
+            lastModEl.textContent = lastModified.toLocaleDateString('es-ES', options);
+        });
+    </script>
 </body>
 </html>
