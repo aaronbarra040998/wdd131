@@ -1,11 +1,23 @@
 /*
-Madagascar Place Page - WDD131
-Script para calcular wind chill y actualizar información dinámica en el footer
+Arequipa Place Page - WDD131
+Script para calcular sensación térmica y actualizar información
 */
 
-// Función para calcular el wind chill usando la fórmula métrica
+// Función para calcular la sensación térmica usando la fórmula métrica
 function calculateWindChill(T, v) {
     return 13.12 + 0.6215 * T - 11.37 * Math.pow(v, 0.16) + 0.3965 * T * Math.pow(v, 0.16);
+}
+
+// Función para formatear fecha
+function formatDate(date) {
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
 // Ejecutar cuando el DOM esté completamente cargado
@@ -21,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Validar que los valores sean números válidos
     if (!isNaN(temp) && !isNaN(windSpeed)) {
-        // Calcular wind chill si se cumplen las condiciones
+        // Calcular sensación térmica si se cumplen las condiciones
         if (temp <= 10 && windSpeed > 4.8) {
             const wc = calculateWindChill(temp, windSpeed);
             windChillElement.textContent = `${wc.toFixed(1)} °C`;
@@ -41,5 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     yearElement.textContent = new Date().getFullYear();
     
     // Última modificación del documento
-    lastModifiedElement.textContent = document.lastModified || 'Unknown';
+    const lastMod = new Date(document.lastModified);
+    lastModifiedElement.textContent = formatDate(lastMod);
 });

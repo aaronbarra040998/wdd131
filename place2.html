@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madagascar — Place Page</title>
+    <title>Arequipa — Ciudad Blanca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/place2.css">
-    <script src="/scripts/getdates.js" defer></script>
+    <link rel="stylesheet" href="styles/place2.css">
 </head>
 <body>
     <header>
-        <h1>Madagascar</h1>
-        <div class="green-stripe"></div>
+        <h1>Arequipa</h1>
+        <div class="red-stripe"></div>
     </header>
 
     <main>
         <section class="hero">
             <picture>
-                <source srcset="images/Arequipa3.jpg" media="(max-width: 600px)">
-                <source srcset="images/Arequipa2.jpeg" media="(max-width: 1200px)">
-                <img src="images/Arequipa1.jpg" alt="Grupo de lémures en madera — Madagascar" loading="lazy">
+                <!-- NOTA: Debes conseguir imágenes de Arequipa en formato WebP -->
+                <source srcset="images/Arequipa3.jpg" media="(max-width: 800px)">
+                <img src="images/Arequipa1.jpg" alt="Vista del volcán Misti y la catedral de Arequipa" loading="lazy">
             </picture>
-            <div class="hero-overlay">
-                <h2>Madagascar</h2>
-                <p>The land of unique biodiversity and stunning landscapes</p>
-            </div>
-            
+        </section>
+        
+        <div class="cards-container">
             <div class="card data-card">
-                <h2>Data</h2>
+                <h2>Datos</h2>
                 <ul>
-                    <li><strong>Area:</strong> 587,041 sq km</li>
-                    <li><strong>Population:</strong> 27,691,018</li>
-                    <li><strong>Capital:</strong> Antananarivo</li>
-                    <li><strong>Languages:</strong> Malagasy, French</li>
-                    <li><strong>Currency:</strong> Malagasy Ariary</li>
-                    <li><strong>Time Zone:</strong> UTC+3</li>
-                    <li><strong>Calling Code:</strong> +261</li>
-                    <li><strong>Internet TLD:</strong> .mg</li>
+                    <li><strong>Altura:</strong> 2,335 msnm</li>
+                    <li><strong>Población:</strong> 1,008,000 habitantes</li>
+                    <li><strong>Fundación:</strong> 15 de agosto de 1540</li>
+                    <li><strong>Fundador:</strong> Garcí Manuel de Carbajal</li>
+                    <li><strong>Clima:</strong> Templado y seco</li>
+                    <li><strong>Apodo:</strong> Ciudad Blanca</li>
+                    <li><strong>Patrona:</strong> Virgen de Chapi</li>
+                    <li><strong>Volcán:</strong> Misti (5,825 m)</li>
                 </ul>
             </div>
             
             <div class="card weather-card">
-                <h2>Weather</h2>
+                <h2>Clima</h2>
                 <ul>
-                    <li><strong>Temperature:</strong> <span id="temp">10</span> °C</li>
-                    <li><strong>Conditions:</strong> Partly Cloudy</li>
-                    <li><strong>Wind:</strong> <span id="wind-speed">5</span> km/h</li>
-                    <li><strong>Wind Chill:</strong> <span id="wind-chill">—</span></li>
+                    <li><strong>Temperatura:</strong> <span id="temp">18</span> °C</li>
+                    <li><strong>Condiciones:</strong> Soleado</li>
+                    <li><strong>Viento:</strong> <span id="wind-speed">12</span> km/h</li>
+                    <li><strong>Sensación Térmica:</strong> <span id="wind-chill">—</span></li>
                 </ul>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>©<span id="year">2024</span> 💡 Rubia Magdolena Francesco 💡 Madagascar</p>
-        <p>Last Modification: <span id="last-modified">02/08/2024 22:47:47</span></p>
+        <p>©<span id="year">2024</span> 💬 Rubia Magdelena Francesco 💬</p>
+        <p>Arequipa, Perú</p>
+        <p>Última Modificación: <span id="last-modified">02/08/2024 22:47:47</span></p>
     </footer>
+
+    <script src="scripts/place2.js" defer></script>
 </body>
 </html>
