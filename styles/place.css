@@ -146,6 +146,14 @@ main {
     font-size: 20px;
 }
 
+/* Icono SVG para móvil - oculto por defecto */
+.weather-icon-mobile {
+    display: none;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
 .card ul {
     list-style: none;
 }
@@ -245,16 +253,10 @@ footer p:last-child {
         display: none;
     }
     
-    /* Mostrar icono SVG de clima en móvil usando pseudo-elemento ::before */
-    .weather-card h2::before {
-        content: "";
-        background: url('../images/cloud_wind.svg') no-repeat center center;
-        background-size: contain;
-        width: 24px;
-        height: 24px;
+    /* Mostrar icono SVG de clima en móvil */
+    .weather-icon-mobile {
         display: inline-block;
         margin-right: 10px;
-        vertical-align: middle;
     }
     
     /* Footer para móvil */
@@ -296,5 +298,9 @@ footer p:last-child {
         color: #000;
         box-shadow: none;
         border-top: 1px solid #ccc;
+    }
+    
+    .weather-icon-mobile {
+        display: none !important;
     }
 }
