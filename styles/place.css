@@ -248,7 +248,7 @@ footer p:last-child {
     /* Mostrar icono SVG de clima en móvil usando pseudo-elemento ::before */
     .weather-card h2::before {
         content: "";
-        background: url('../images/cloud-wind-svgrepo-com.svg') no-repeat center center;
+        background: url('../images/cloud_wind.svg') no-repeat center center;
         background-size: contain;
         width: 24px;
         height: 24px;
