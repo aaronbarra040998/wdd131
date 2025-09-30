@@ -1,422 +1,300 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madagascar — Place</title>
-    <meta name="description" content="Página informativa sobre Madagascar con datos, clima y características del país">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <style>
-        :root {
-            --red: #c8102e;           /* cabecera y footer rojo */
-            --green: #117a4b;         /* franja y acentos */
-            --card-bg: #ffffff;
-            --muted: #54595f;
-            --text: #111827;
-            --max-width: 1200px;
-            --container-pad: 1rem;
-            --radius: 8px;
-        }
+/* 
+Arequipa Place Page - WDD131
+Estilos optimizados para la Ciudad Blanca de Perú
+*/
 
-        /* Reset simple */
-        * { box-sizing: border-box; }
-        html, body { height: 100%; }
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            color: var(--text);
-            background: #fff;
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-        }
+:root {
+    /* Colores inspirados en Arequipa - rojo del escudo y blanco de la ciudad */
+    --red-primary: #CC2B2B;
+    --red-secondary: #A61C1C;
+    --white-primary: #FFFFFF;
+    --text-dark: #2C2C2C;
+    --text-medium: #444;
+    --text-light: #666;
+    --white-transparent: rgba(255, 255, 255, 0.92);
+    --background-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    /* Tipografías */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    
+    /* Dimensiones */
+    --border-radius: 8px;
+    --card-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    --header-height: 120px;
+    --hero-height: 500px;
+    --mobile-hero-height: 350px;
+}
 
-        /* Container */
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--container-pad);
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* HEADER (mobile: alto y centrado) */
-        .site-header {
-            background: var(--red);
-            color: white;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 92px;
-        }
-        .site-title {
-            margin: 0;
-            font-size: 2.0rem;
-            font-weight: 700;
-            letter-spacing: 0.6px;
-        }
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: var(--background-gradient);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        /* Franja verde inmediatamente debajo de la cabecera */
-        .header-accent {
-            height: 10px;
-            background: var(--green);
-            box-shadow: 0 2px 0 rgba(0,0,0,0.06);
-        }
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        /* HERO (imagen alta en mobile) */
-        .hero {
-            position: relative;
-            width: 100%;
-        }
-        .hero-img {
-            width: 100%;
-            display: block;
-            height: 520px;
-            object-fit: cover;
-            background: linear-gradient(to bottom, #117a4b, #c8102e);
-        }
+header h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-        /* Section base (Data / Weather) */
-        .section {
-            background: var(--card-bg);
-            padding: 28px 0;
-            border-bottom: 4px solid rgba(200,0,40,0.03);
-        }
+.red-stripe {
+    height: 8px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--white-primary) 0%, var(--red-primary) 50%, var(--white-primary) 100%);
+}
 
-        /* Títulos de sección grandes y centrados */
-        .section-title {
-            text-align: center;
-            margin: 0 0 18px 0;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text);
-        }
+/* Main Container */
+main {
+    position: relative;
+    flex: 1;
+}
 
-        /* DATA list styles (mobile single column) */
-        .data-list {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .data-list p {
-            margin: 12px 0;
-            font-size: 1rem;
-            color: var(--muted);
-            text-align: left;
-        }
-        .data-list .label {
-            font-weight: 700;
-            margin-right: 8px;
-            color: #111;
-        }
-        .data-list .value { color: var(--muted); }
+/* Hero Section */
+.hero {
+    position: relative;
+    height: var(--hero-height);
+    overflow: hidden;
+    margin: 0;
+    border-bottom: 5px solid var(--red-primary);
+}
 
-        /* WEATHER center block */
-        .weather-center {
-            max-width: 640px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        .weather-icon { margin: 8px 0 20px; }
-        .weather-data p {
-            margin: 10px 0;
-            font-size: 1rem;
-            color: var(--muted);
-        }
-        .weather-data .w-label { 
-            font-weight: 700; 
-            color: #111; 
-            margin-right: 6px; 
-        }
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
 
-        /* Footer mejorado */
-        .site-footer {
-            background: var(--red);
-            color: white;
-            padding: 28px 0 20px;
-            margin-top: auto; /* Empuja el footer hacia abajo */
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .footer-inner { 
-            text-align: center; 
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .footer-main {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .footer-emoji {
-            font-size: 1.4rem;
-        }
-        
-        .footer-modification {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin: 8px 0 0;
-            padding: 10px 0 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-        }
-        
-        .footer-country {
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Ajustes para desktop */
-        @media (min-width: 992px) {
-            .hero-img { height: 520px; }
+.hero:hover img {
+    transform: scale(1.02);
+}
 
-            .data-section { padding-top: 0; margin-top: -220px; }
-            .weather-section { padding-top: 0; margin-top: -120px; }
+/* Cards Container */
+.cards-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* position: relative; */
+}
 
-            .data-list, .weather-center {
-                background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.92));
-                box-shadow: 0 12px 40px rgba(16,24,40,0.10);
-                border: 1px solid rgba(30,40,45,0.06);
-                border-radius: 8px;
-                padding: 20px;
-            }
+/* Cards */
+.card {
+    position: absolute;
+    background: var(--white-transparent);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-            .data-list {
-                position: absolute;
-                left: 60px;
-                top: 140px;
-                width: 360px;
-                max-width: 40%;
-                margin: 0;
-            }
-            .weather-center {
-                position: absolute;
-                right: 60px;
-                top: 200px;
-                width: 320px;
-                margin: 0;
-                text-align: left;
-            }
+.data-card {
+    width: 360px;
+    left: 60px;
+    top: 40px;
+}
 
-            .section-title { 
-                font-size: 1.25rem; 
-                text-align: left; 
-                padding-left: 8px; 
-                background: var(--green); 
-                color: #fff; 
-                display: inline-block; 
-                border-radius: 4px; 
-                padding: 8px 12px; 
-                margin-bottom: 12px;
-            }
-            .data-section .section-title, .weather-section .section-title { 
-                display: block; 
-                margin: 0 0 12px 0; 
-                background: var(--green); 
-                color: #fff; 
-                width: auto;
-            }
+.weather-card {
+    width: 320px;
+    right: 60px;
+    top: 120px;
+}
 
-            .weather-section .section-title::after {
-                content: " ⛅";
-                font-size: 1.2rem;
-            }
-            
-            /* Mejoras para el footer en desktop */
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-            
-            .footer-modification {
-                text-align: right;
-                border-top: none;
-                border-left: 1px solid rgba(255, 255, 255, 0.2);
-                padding-left: 20px;
-                margin-top: 0;
-                width: auto;
-            }
-        }
+.card h2 {
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-secondary) 100%);
+    color: white;
+    padding: 12px 20px;
+    font-size: 24px;
+    margin: -20px -20px 20px -20px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    display: inline-block;
+    width: calc(100% + 40px);
+    font-family: var(--font-heading);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        /* Mejoras de accesibilidad */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
+/* Icono de clima para desktop usando pseudo-elemento ::after */
+.weather-card h2::after {
+    content: "☀️";
+    margin-left: 10px;
+    font-size: 20px;
+}
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
+.card ul {
+    list-style: none;
+}
 
-        /* Mejora de contraste para accesibilidad */
-        @media (prefers-contrast: high) {
-            :root {
-                --text: #000000;
-                --muted: #333333;
-            }
-            
-            .data-list .label,
-            .weather-data .w-label {
-                color: #000;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="site-header" role="banner">
-        <div class="container header-inner">
-            <h1 class="site-title">Madagascar</h1>
-        </div>
-        <div class="header-accent" aria-hidden="true"></div>
-    </header>
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(204, 43, 43, 0.1);
+    padding-bottom: 8px;
+}
 
-    <main>
-        <section class="hero" aria-label="Imagen principal del lugar">
-            <picture>
-                <!-- En una implementación real, aquí irían las imágenes WebP y sus fallbacks -->
-                <!-- Ejemplo de implementación con srcset para imágenes responsivas -->
-                <source srcset="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&auto=format" media="(min-width: 992px)" type="image/webp">
-                <source srcset="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&auto=format" media="(min-width: 768px)" type="image/webp">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop&auto=format" 
-                     alt="Paisaje de Madagascar con lémures y baobabs" class="hero-img" loading="lazy">
-            </picture>
-        </section>
+.card li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
-        <!-- DATA (mobile: full width block) -->
-        <section class="section data-section" aria-labelledby="data-heading">
-            <div class="container">
-                <h2 id="data-heading" class="section-title">Data</h2>
+.card strong {
+    color: var(--red-secondary);
+    font-weight: 700;
+}
 
-                <div class="data-list">
-                    <p><span class="label">Area:</span> <span class="value">587,041 sq km</span></p>
-                    <p><span class="label">Population:</span> <span class="value">27,691,018</span></p>
-                    <p><span class="label">Capital:</span> <span class="value">Antananarivo</span></p>
-                    <p><span class="label">Languages:</span> <span class="value">Malagasy, French</span></p>
-                    <p><span class="label">Currency:</span> <span class="value">Malagasy Ariary</span></p>
-                    <p><span class="label">Time Zone:</span> <span class="value">UTC+3</span></p>
-                    <p><span class="label">Calling Code:</span> <span class="value">+261</span></p>
-                    <p><span class="label">Internet TLD:</span> <span class="value">.mg</span></p>
-                </div>
-            </div>
-        </section>
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        <!-- WEATHER (mobile: full width block) -->
-        <section class="section weather-section" aria-labelledby="weather-heading">
-            <div class="container">
-                <h2 id="weather-heading" class="section-title">Weather</h2>
+footer p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
 
-                <div class="weather-center">
-                    <!-- SVG icon centrado -->
-                    <div class="weather-icon" aria-hidden="true">
-                        <svg width="120" height="120" viewBox="0 0 64 64" role="img" xmlns="http://www.w3.org/2000/svg">
-                            <title>Ícono de clima parcialmente nublado</title>
-                            <g fill="none" stroke="#3e3e3e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                <path d="M20 40a6 6 0 0 1 0-12 7 7 0 0 1 13.7-2.2A5 5 0 0 1 44 30h-2"/>
-                                <path fill="#f6c44a" stroke="none" d="M40 18a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
-                                <path d="M22 46h18" stroke="#3e3e3e"/>
-                                <path d="M24 50h2 M30 50h2 M36 50h2" stroke="#3e3e3e"/>
-                            </g>
-                        </svg>
-                    </div>
+footer p:last-child {
+    margin-bottom: 0;
+}
 
-                    <div class="weather-data">
-                        <p><span class="w-label">Temperature:</span> <strong><span id="temp">10</span> °C</strong></p>
-                        <p><span class="w-label">Conditions:</span> <strong>Partly Cloudy</strong></p>
-                        <p><span class="w-label">Wind:</span> <strong><span id="windSpeed">5</span> km/h</strong></p>
-                        <p><span class="w-label">Wind Chill:</span> <strong><span id="windChill">—</span></strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+/* Efectos hover para desktop */
+@media (min-width: 801px) {
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+}
 
-    <footer class="site-footer" role="contentinfo">
-        <div class="container footer-inner">
-            <div class="footer-content">
-                <p class="footer-main">
-                    <span class="footer-emoji">©</span>
-                    <span id="year"></span>
-                    <span class="footer-emoji">💬</span>
-                    Rubia Magdelena Francesco
-                    <span class="footer-emoji">💬</span>
-                    <span class="footer-country">Madagascar</span>
-                </p>
-                <p class="footer-modification">
-                    Last Modification: <span id="lastModified"></span>
-                </p>
-            </div>
-        </div>
-    </footer>
+/* VISTA MÓVIL */
+@media (max-width: 800px) {
+    header h1 {
+        font-size: 36px;
+        padding-bottom: 1rem;
+    }
+    
+    .hero {
+        height: var(--mobile-hero-height);
+        margin-bottom: 0;
+    }
+    
+    /* Contenedor para las tarjetas en móvil */
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 25px 20px;
+    }
+    
+    /* Tarjetas en móvil */
+    .card {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin: 0;
+        left: auto;
+        right: auto;
+        top: auto;
+        backdrop-filter: blur(6px);
+    }
+    
+    .data-card {
+        order: 1;
+        margin-top: 0;
+    }
+    
+    .weather-card {
+        order: 2;
+        margin-top: 0;
+    }
+    
+    /* Ocultar emoji desktop en móvil */
+    .weather-card h2::after {
+        content: "";
+        display: none;
+    }
+    
+    /* Mostrar icono SVG de clima en móvil usando pseudo-elemento ::before */
+    .weather-card h2::before {
+        content: "";
+        background: url('../images/cloud-wind-svgrepo-com.svg') no-repeat center center;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    /* Footer para móvil */
+    footer {
+        padding: 1.2rem 0;
+    }
+    
+    footer p {
+        margin-bottom: 6px;
+        line-height: 1.3;
+        font-size: 15px;
+    }
+}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tempEl = document.getElementById('temp');
-            const windEl = document.getElementById('windSpeed');
-            const wcEl   = document.getElementById('windChill');
-            const yearEl = document.getElementById('year');
-            const lastModEl = document.getElementById('lastModified');
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .hero img {
+        transition: none;
+    }
+    
+    .card {
+        transition: none;
+    }
+}
 
-            const temp = parseFloat(tempEl?.textContent) || 0;   // °C
-            const wind = parseFloat(windEl?.textContent) || 0;   // km/h
-
-            // Función de una sola línea para wind chill (métrica)
-            function calculateWindChill(t, v) { 
-                return 13.12 + 0.6215 * t - 11.37 * Math.pow(v, 0.16) + 0.3965 * t * Math.pow(v, 0.16); 
-            }
-
-            // Condición métrica: T <= 10°C y V > 4.8 km/h
-            if (temp <= 10 && wind > 4.8) {
-                const wc = Math.round(calculateWindChill(temp, wind) * 10) / 10;
-                wcEl.textContent = `${wc} °C`;
-            } else {
-                wcEl.textContent = 'N/A';
-            }
-
-            // Footer dinámico
-            yearEl.textContent = new Date().getFullYear();
-            
-            // Formatear fecha de última modificación
-            const lastModified = new Date(document.lastModified);
-            const options = { 
-                year: 'numeric', 
-                month: '2-digit', 
-                day: '2-digit',
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit' 
-            };
-            lastModEl.textContent = lastModified.toLocaleDateString('es-ES', options);
-        });
-    </script>
-</body>
-</html>
+/* Mejoras de impresión */
+@media print {
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .hero {
+        border-bottom: 1px solid #ccc;
+    }
+    
+    footer {
+        background: #fff;
+        color: #000;
+        box-shadow: none;
+        border-top: 1px solid #ccc;
+    }
+}
