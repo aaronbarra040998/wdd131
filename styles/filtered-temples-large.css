@@ -1,4 +1,4 @@
-/* Estilos para pantallas grandes */
+
 @media (min-width: 768px) {
     #hamburger-btn {
         display: none;
@@ -24,7 +24,7 @@
         border-radius: 4px;
     }
 
-    /* Gallery - 3 columnas en escritorio */
+
     .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
