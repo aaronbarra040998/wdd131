@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Temple Album – Aaron Daniel Apaza Barra</title>   
+    <meta name="author" content="Aarón Daniel Apaza Barra">
+    <meta name="description" content="Explore filtered temple album with lazy loading and dynamic filtering features.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 768px)">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Temple Album</h1>
+            <button id="hamburger-btn" aria-label="Toggle menu">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" id="home">Home</a></li>
+                    <li><a href="#" id="old">Old</a></li>
+                    <li><a href="#" id="new">New</a></li>
+                    <li><a href="#" id="large">Large</a></li>
+                    <li><a href="#" id="small">Small</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 id="gallery-title">All Temples</h2>
+        <div id="gallery" class="gallery">
+            <!-- Las tarjetas de templos se generarán aquí dinámicamente con JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> ♣ Aarón D. Apaza ♣ Peru</p>
+        <p id="lastModified">Last Modification: </p>
+    </footer>
+</body>
+</html>
