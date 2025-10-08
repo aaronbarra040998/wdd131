@@ -1,21 +1,21 @@
 :root {
-    --primary-color: #3498db;
-    --primary-dark: #2980b9;
-    --secondary-color: #2c3e50;
-    --secondary-light: #34495e;
-    --accent-color: #e74c3c;
-    --accent-dark: #c0392b;
-    --light-color: #ecf0f1;
-    --light-gray: #f8f9fa;
-    --dark-color: #2c3e50;
-    --text-color: #2c3e50;
-    --text-light: #7f8c8d;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --border-color: #bdc3c7;
-    --border-light: #e0e0e0;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #374151;
+    --secondary-light: #4b5563;
+    --accent-color: #dc2626;
+    --accent-dark: #b91c1c;
+    --light-color: #f9fafb;
+    --light-gray: #f3f4f6;
+    --dark-color: #111827;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --border-color: #d1d5db;
+    --border-light: #e5e7eb;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -25,10 +25,10 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     background-attachment: fixed;
     min-height: 100vh;
     padding: 20px;
@@ -42,6 +42,7 @@ body {
     box-shadow: var(--shadow);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-light);
 }
 
 .container:hover {
@@ -49,7 +50,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+    background: var(--secondary-color);
     color: white;
     padding: 25px 20px;
     text-align: center;
@@ -63,7 +64,7 @@ header::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--success-color));
 }
 
@@ -71,12 +72,15 @@ h1 {
     font-size: 2rem;
     margin-bottom: 8px;
     font-weight: 700;
+    color: white;
+    letter-spacing: -0.025em;
 }
 
 .subtitle {
     font-size: 1.1rem;
     opacity: 0.9;
-    font-weight: 300;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 main {
@@ -104,6 +108,7 @@ label {
     font-weight: 600;
     color: var(--dark-color);
     font-size: 1rem;
+    letter-spacing: -0.015em;
 }
 
 .required::after {
@@ -116,7 +121,7 @@ label {
 select, input[type="date"], input[type="text"], textarea {
     width: 100%;
     padding: 14px 16px;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -128,8 +133,8 @@ select, input[type="date"], input[type="text"], textarea {
 select:focus, input[type="date"]:focus, input[type="text"]:focus, textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    background-color: var(--light-gray);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background-color: white;
 }
 
 /* Mejoras de accesibilidad para focus */
@@ -137,14 +142,14 @@ select:focus-visible,
 input[type="date"]:focus-visible, 
 input[type="text"]:focus-visible, 
 textarea:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 1px;
 }
 
 /* Placeholder styling */
 ::placeholder {
     color: var(--text-light);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 textarea {
@@ -154,10 +159,10 @@ textarea {
     line-height: 1.5;
 }
 
-/* ⭐⭐ RADIO GROUP - MEJORADO COMPLETAMENTE ⭐⭐ */
+/* ⭐⭐ RADIO GROUP - ESTILO MINIMALISTA ⭐⭐ */
 .radio-group {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     margin-top: 15px;
     flex-wrap: wrap;
     justify-content: center;
@@ -169,17 +174,17 @@ textarea {
     align-items: center;
     cursor: pointer;
     padding: 12px 8px;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     min-width: 70px;
-    border: 2px solid transparent;
-    background: var(--light-gray);
+    border: 1px solid var(--border-light);
+    background: white;
 }
 
 .radio-option:hover {
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: var(--light-gray);
     border-color: var(--primary-color);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .radio-option input {
@@ -188,7 +193,7 @@ textarea {
 
 .star-rating {
     font-size: 28px;
-    color: #ddd;
+    color: #e5e7eb;
     transition: all 0.3s ease;
     cursor: pointer;
     line-height: 1;
@@ -198,14 +203,13 @@ textarea {
 }
 
 .radio-option:hover .star-rating {
-    color: #ffd700;
-    transform: scale(1.1);
+    color: #fbbf24;
+    transform: scale(1.05);
 }
 
 .radio-option input:checked + .star-rating {
-    color: #ffc107;
-    text-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
-    transform: scale(1.15);
+    color: #f59e0b;
+    transform: scale(1.1);
 }
 
 .rating-text {
@@ -217,11 +221,11 @@ textarea {
     line-height: 1.2;
 }
 
-/* ✅✅ CHECKBOX GROUP - COMPLETAMENTE REDISEÑADO ✅✅ */
+/* ✅✅ CHECKBOX GROUP - ESTILO MINIMALISTA ✅✅ */
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     margin-top: 15px;
 }
 
@@ -231,21 +235,20 @@ textarea {
     gap: 12px;
     cursor: pointer;
     padding: 12px 16px;
-    border: 2px solid var(--border-light);
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     transition: all 0.3s ease;
     flex: 1;
     min-width: 150px;
-    background: var(--light-gray);
+    background: white;
     position: relative;
     user-select: none;
 }
 
 .checkbox-option:hover {
     border-color: var(--primary-color);
-    background-color: rgba(52, 152, 219, 0.05);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--light-gray);
+    transform: translateY(-1px);
 }
 
 /* Ocultar el checkbox nativo */
@@ -257,7 +260,7 @@ textarea {
     width: 0;
 }
 
-/* Checkbox personalizado */
+/* Checkbox personalizado minimalista */
 .checkbox-custom {
     position: relative;
     height: 20px;
@@ -265,7 +268,7 @@ textarea {
     background-color: white;
     border: 2px solid var(--border-color);
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     flex-shrink: 0;
 }
 
@@ -307,11 +310,11 @@ textarea {
 
 /* Estado focus para accesibilidad */
 .checkbox-option input:focus ~ .checkbox-custom {
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     border-color: var(--primary-color);
 }
 
-/* Form Actions - Mejorado */
+/* Form Actions - Estilo minimalista */
 .form-actions {
     display: flex;
     justify-content: flex-end;
@@ -321,7 +324,7 @@ textarea {
 }
 
 button {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 16px 32px;
@@ -330,30 +333,17 @@ button {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
     position: relative;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
-}
-
-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
+    letter-spacing: -0.015em;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-}
-
-button:hover::before {
-    left: 100%;
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 button:active {
@@ -361,7 +351,7 @@ button:active {
 }
 
 button:focus {
-    outline: 3px solid var(--primary-color);
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
@@ -374,12 +364,12 @@ button:disabled {
 
 button:disabled:hover {
     transform: none;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
-/* Footer - Mejorado */
+/* Footer - Minimalista */
 footer {
-    background: linear-gradient(135deg, var(--light-color) 0%, #dfe6e9 100%);
+    background: var(--light-gray);
     padding: 20px;
     text-align: center;
     font-size: 0.9rem;
@@ -410,6 +400,7 @@ select:valid, input:valid {
 @media (max-width: 768px) {
     body {
         padding: 10px;
+        background: #f8fafc;
     }
     
     .container {
@@ -493,7 +484,7 @@ select:valid, input:valid {
     }
 }
 
-/* Animaciones de entrada */
+/* Animaciones de entrada sutiles */
 @keyframes fadeInUp {
     from {
         opacity: 0;
