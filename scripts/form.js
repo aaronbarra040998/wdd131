@@ -48,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up form submission with counter
     setupFormSubmission();
-    
-    // ✅ LOS CHECKBOXES AHORA FUNCIONAN NATIVAMENTE - NO SE NECESITA CÓDIGO EXTRA
 });
 
 // Enhanced star rating interaction
