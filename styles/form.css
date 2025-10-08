@@ -9,7 +9,7 @@
     --light-gray: #f3f4f6;
     --dark-color: #111827;
     --text-color: #1f2937;
-    --text-light: #6b7280;
+    --text-light: #4b5563;
     --success-color: #059669;
     --warning-color: #d97706;
     --border-color: #d1d5db;
@@ -203,7 +203,7 @@ textarea {
 }
 
 .radio-option:hover .star-rating {
-    color: #fbbf24;
+    color: #ea580c;
     transform: scale(1.05);
 }
 
