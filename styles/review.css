@@ -26,7 +26,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -242,6 +242,7 @@ main {
     position: relative;
     overflow: hidden;
     min-width: 200px;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn::before {

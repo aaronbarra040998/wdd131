@@ -25,7 +25,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -122,6 +122,7 @@ select, input[type="date"], input[type="text"], textarea {
     transition: all 0.3s ease;
     background-color: white;
     color: var(--text-color);
+    font-family: 'Inter', sans-serif;
 }
 
 select:focus, input[type="date"]:focus, input[type="text"]:focus, textarea:focus {
@@ -156,10 +157,10 @@ textarea {
 /* ⭐⭐ RADIO GROUP - MEJORADO COMPLETAMENTE ⭐⭐ */
 .radio-group {
     display: flex;
-    gap: 15px; /* Más espacio entre estrellas */
+    gap: 15px;
     margin-top: 15px;
     flex-wrap: wrap;
-    justify-content: center; /* Centrar las estrellas */
+    justify-content: center;
 }
 
 .radio-option {
@@ -167,7 +168,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    padding: 12px 8px; /* Más espacio interno */
+    padding: 12px 8px;
     border-radius: 10px;
     transition: all 0.3s ease;
     min-width: 70px;
@@ -186,7 +187,7 @@ textarea {
 }
 
 .star-rating {
-    font-size: 28px; /* Tamaño más moderado */
+    font-size: 28px;
     color: #ddd;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -216,11 +217,11 @@ textarea {
     line-height: 1.2;
 }
 
-/* ✅✅ CHECKBOX GROUP - CORREGIDO COMPLETAMENTE ✅✅ */
+/* ✅✅ CHECKBOX GROUP - COMPLETAMENTE REDISEÑADO ✅✅ */
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px; /* Espacio más consistente */
+    gap: 12px;
     margin-top: 15px;
 }
 
@@ -235,62 +236,79 @@ textarea {
     transition: all 0.3s ease;
     flex: 1;
     min-width: 150px;
+    background: var(--light-gray);
     position: relative;
-    overflow: hidden;
-}
-
-/* 🔥 SOLUCIÓN: Solo el checkbox y label son clickeables */
-.checkbox-option input,
-.checkbox-option label {
-    cursor: pointer;
-    z-index: 2;
-    position: relative;
-}
-
-/* Área no clickeable del contenedor */
-.checkbox-option::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+    user-select: none;
 }
 
 .checkbox-option:hover {
     border-color: var(--primary-color);
     background-color: rgba(52, 152, 219, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.checkbox-option input {
-    width: 20px;
+/* Ocultar el checkbox nativo */
+.checkbox-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Checkbox personalizado */
+.checkbox-custom {
+    position: relative;
     height: 20px;
-    accent-color: var(--primary-color);
+    width: 20px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
     flex-shrink: 0;
 }
 
-.checkbox-option input:checked {
-    transform: scale(1.1);
+/* Checkmark personalizado */
+.checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
-.checkbox-option label {
+/* Cuando el checkbox está checked */
+.checkbox-option input:checked ~ .checkbox-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-option input:checked ~ .checkbox-custom:after {
+    display: block;
+}
+
+/* Texto del checkbox */
+.checkbox-text {
     font-weight: 500;
     color: var(--text-color);
     flex: 1;
-    margin: 0;
-    cursor: pointer;
 }
 
-/* Efecto visual cuando el checkbox está checked */
-.checkbox-option input:checked ~ label {
+.checkbox-option input:checked ~ .checkbox-text {
     color: var(--primary-color);
     font-weight: 600;
 }
 
-.checkbox-option input:checked ~ .checkmark {
-    opacity: 1;
-    transform: scale(1);
+/* Estado focus para accesibilidad */
+.checkbox-option input:focus ~ .checkbox-custom {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    border-color: var(--primary-color);
 }
 
 /* Form Actions - Mejorado */
@@ -315,6 +333,7 @@ button {
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
     position: relative;
     overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 button::before {
@@ -346,7 +365,6 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* Mejorar contraste de botones deshabilitados */
 button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -410,7 +428,6 @@ select:valid, input:valid {
         padding: 20px;
     }
     
-    /* Estrellas en móvil - más espacio */
     .radio-group {
         gap: 8px;
         justify-content: space-between;
@@ -429,7 +446,6 @@ select:valid, input:valid {
         font-size: 0.7rem;
     }
     
-    /* Checkboxes en móvil */
     .checkbox-group {
         gap: 8px;
     }
@@ -472,7 +488,7 @@ select:valid, input:valid {
         padding: 12px 15px;
     }
     
-    .checkbox-option label {
+    .checkbox-text {
         font-size: 0.9rem;
     }
 }

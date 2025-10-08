@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up form submission with counter
     setupFormSubmission();
     
-    // 🔥 CORREGIR: Configurar checkboxes correctamente
-    setupCheckboxes();
+    // ✅ LOS CHECKBOXES AHORA FUNCIONAN NATIVAMENTE - NO SE NECESITA CÓDIGO EXTRA
 });
 
 // Enhanced star rating interaction
@@ -92,39 +91,6 @@ function updateStarDisplay() {
             }
         }
     }
-}
-
-// 🔥 NUEVA FUNCIÓN: Configurar checkboxes correctamente
-function setupCheckboxes() {
-    const checkboxOptions = document.querySelectorAll('.checkbox-option');
-    
-    checkboxOptions.forEach(option => {
-        const checkbox = option.querySelector('input[type="checkbox"]');
-        const label = option.querySelector('label');
-        
-        // Solo el checkbox y el label deben ser clickeables
-        checkbox.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-        
-        label.addEventListener('click', function(e) {
-            e.stopPropagation();
-            checkbox.checked = !checkbox.checked;
-            
-            // Disparar evento change para posibles listeners
-            const event = new Event('change', { bubbles: true });
-            checkbox.dispatchEvent(event);
-        });
-        
-        // Prevenir que el contenedor afecte el checkbox
-        option.addEventListener('click', function(e) {
-            // Si el click no fue en el checkbox ni en el label
-            if (e.target !== checkbox && e.target !== label) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
-    });
 }
 
 // Set up form submission with counter

@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Submit product reviews and share your experience with our products">
+    <meta name="description" content="Review submitted successfully - Thank you for your valuable feedback">
     <meta name="author" content="Aarón Daniel Apaza Barra">
-    <title>Review Submitted</title>
+    <title>Review Submitted Successfully - Product Review Confirmation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/review.css">
 </head>
 <body>
@@ -17,9 +23,9 @@
         
         <main>
             <div class="confirmation">
-                <div class="success-icon">✓</div>
+                <div class="success-icon" aria-hidden="true">✓</div>
                 <h2>Your Review Has Been Submitted</h2>
-                <p>Thank you for taking the time to share your experience with us.</p>
+                <p>Thank you for taking the time to share your experience with us. Your feedback helps us improve our products and services.</p>
                 
                 <div class="review-summary">
                     <h3>Review Summary</h3>
@@ -40,10 +46,14 @@
         
         <footer>
             <p>©2024 💬 Rubia Magdelena Francesco 💬 Madagascar</p>
-            <p>Last Modification: 02/26/2024 13:56:10</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
         </footer>
     </div>
 
-    <script src="styles/review.css"></script>
+    <script src="scripts/review.js" defer></script>
+    <script defer>
+        // Update last modified date
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
