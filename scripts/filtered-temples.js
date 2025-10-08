@@ -6,8 +6,9 @@ document.getElementById('lastModified').textContent += document.lastModified;
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mainNav = document.getElementById('main-nav');
 hamburgerBtn.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-    hamburgerBtn.textContent = mainNav.classList.contains('active') ? 'X' : '☰';
+    const isActive = mainNav.classList.toggle('active');
+    hamburgerBtn.textContent = isActive ? 'X' : '☰';
+    hamburgerBtn.setAttribute('aria-expanded', isActive);
 });
 
 // Close mobile menu when clicking links
@@ -16,6 +17,7 @@ document.querySelectorAll('#main-nav a').forEach(link => {
         if (window.innerWidth < 768) {
             mainNav.classList.remove('active');
             hamburgerBtn.textContent = '☰';
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
         }
     });
 });
@@ -99,7 +101,7 @@ const temples = [
 function createTempleCard(temple) {
     const figure = document.createElement('figure');
     figure.innerHTML = `
-        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+        <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
         <figcaption>
             <h3>${temple.templeName}</h3>
             <p><strong>Location:</strong> ${temple.location}</p>

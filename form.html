@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit product reviews and share your experience with our products">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Review</h1>
+            <p class="subtitle">Share your experience with our products</p>
+        </header>
+        
+        <main>
+            <form id="reviewForm" method="get" action="review.html">
+                <div class="form-group">
+                    <label for="productName" class="required">Product Name</label>
+                    <select id="productName" name="productName" required>
+                        <option value="" disabled selected>Select a Product ...</option>
+                        <!-- Product options will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Overall Rating</label>
+                    <div class="radio-group" id="ratingGroup">
+                        <div class="radio-option">
+                            <input type="radio" id="rating1" name="rating" value="1" required>
+                            <label for="rating1" class="star-rating">★</label>
+                            <span class="rating-text">1 - Poor</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="rating2" name="rating" value="2">
+                            <label for="rating2" class="star-rating">★★</label>
+                            <span class="rating-text">2 - Fair</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="rating3" name="rating" value="3">
+                            <label for="rating3" class="star-rating">★★★</label>
+                            <span class="rating-text">3 - Good</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="rating4" name="rating" value="4">
+                            <label for="rating4" class="star-rating">★★★★</label>
+                            <span class="rating-text">4 - Very Good</span>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="rating5" name="rating" value="5">
+                            <label for="rating5" class="star-rating">★★★★★</label>
+                            <span class="rating-text">5 - Excellent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="installDate" class="required">Date of Installation</label>
+                    <input type="date" id="installDate" name="installDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Which features did you find useful in the product? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="feature1" name="features" value="Durability">
+                            <label for="feature1">Durability</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="feature2" name="features" value="Ease of Use">
+                            <label for="feature2">Ease of Use</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="feature3" name="features" value="Performance">
+                            <label for="feature3">Performance</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="feature4" name="features" value="Design">
+                            <label for="feature4">Design</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="writtenReview">Written Review (Optional)</label>
+                    <textarea id="writtenReview" name="writtenReview" placeholder="Tell us more about your experience..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userName">Your Name (Optional)</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit">Submit Review</button>
+                </div>
+            </form>
+        </main>
+        
+        <footer>
+            <p>©2024 💬 Rubia Magdelena Francesco 💬 Madagascar</p>
+            <p>Last Modification: 02/26/2024 13:56:10</p>
+        </footer>
+    </div>
+
+    <script src="/scripts/form.js"></script>
+</body>
+</html>
