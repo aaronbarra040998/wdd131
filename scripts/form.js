@@ -123,3 +123,5 @@ function incrementReviewCounter() {
     count++;
     localStorage.setItem('reviewCount', count);
 }
+
+        document.getElementById('lastModified').textContent = document.lastModified;
