@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resume & Contact — Aarón D. Apaza</title>
+  <meta name="description" content="Resume and contact form — Aarón D. Apaza">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><h1><a href="index.html">Aarón D. Apaza</a></h1><p>Resume & Contact</p></div>
+      
+      <!-- Header Controls: Dark theme + Download CV -->
+      <div class="header-controls">
+        <button id="theme-toggle" class="btn ghost" aria-pressed="false" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="text"> Dark</span>
+        </button>
+        <a href="assets/CV_Aaron_Apaza.pdf" download class="btn primary">
+          <span>📥</span>
+          <span class="text">Download CV</span>
+        </a>
+      </div>
+      
+      <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="main-nav" aria-hidden="true" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html" aria-current="page">Resume & Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h2>Resume & Contact</h2>
+
+    <div class="two-col">
+      <section class="card">
+        <h3>Professional Summary</h3>
+        <p>Software Developer with experience in frontend and backend technologies, including <strong>React, Java, and Spring Boot</strong>. Proven track record leading projects that enhance user experience, such as the academic solution <strong>PARKINGSHUB</strong> at TECSUP.</p>
+        
+        <h4>Technical Skills</h4>
+        <ul>
+          <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React, Angular, Responsive Design</li>
+          <li><strong>Backend:</strong> Java, Spring Boot, Python, RESTful APIs</li>
+          <li><strong>Tools & Methods:</strong> Git, Bash, SEO Optimization, UI/UX Design, Agile Development</li>
+          <li><strong>Soft Skills:</strong> Team Leadership, Problem Solving, Project Management, Collaboration</li>
+        </ul>
+
+        <h4>Professional Experience</h4>
+        <div class="experience-item">
+          <h5>Frontend Developer</h5>
+          <p><em>Corporación de Contratistas y Proveedores S.R.L. | Jul 2023 - Aug 2023</em></p>
+          <ul>
+            <li>Designed and developed fully responsive corporate website</li>
+            <li>Optimized HTML and CSS for SEO and accessibility</li>
+            <li>Collaborated with multifunctional teams</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h5>Project Developer - PARKINGSHUB</h5>
+          <p><em>TECSUP | Mar 2024 - Aug 2024</em></p>
+          <ul>
+            <li>Led creation of innovative on-demand garage rental platform</li>
+            <li>Full-stack development with React and Spring Boot</li>
+            <li>Applied leadership and collaborative problem-solving</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact</h3>
+        <form id="contact-form" novalidate>
+          <label for="name">Name
+            <input id="name" name="name" type="text" required minlength="2" placeholder="Your name">
+          </label>
+
+          <label for="email">Email
+            <input id="email" name="email" type="email" required placeholder="your@example.com">
+          </label>
+
+          <label for="message">Message
+            <textarea id="message" name="message" required minlength="10" placeholder="Write your message..."></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button id="contact-submit" type="submit" class="btn">Send</button>
+          </div>
+
+          <div id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aarón D. Apaza</p>
+      <p><a href="references.html">References</a></p>
+    </div>
+  </footer>
+</body>
+</html>

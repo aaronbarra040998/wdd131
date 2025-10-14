@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Aarón A.</title>
+  <meta name="description" content="WDD131 course projects by Aarón D. Apaza.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><h1><a href="index.html">Aarón D. Apaza</a></h1><p>Projects — WDD131</p></div>
+
+      <!-- Header Controls: Dark theme + Download CV -->
+      <div class="header-controls">
+        <button id="theme-toggle" class="btn ghost" aria-pressed="false" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="text"> Dark</span>
+        </button>
+        <a href="assets/CV_Aaron_Apaza.pdf" download class="btn primary">
+          <span>📥</span>
+          <span class="text">Download CV</span>
+        </a>
+      </div>
+
+      <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="main-nav" aria-hidden="true" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="resume.html">Resume & Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page" role="main">
+    <h2>Projects</h2>
+    <div class="controls" aria-hidden="false">
+      <input id="search" type="search" placeholder="Search by title, description or technology..." aria-label="Search projects">
+      <select id="filter-tech" aria-label="Filter by technology">
+        <option value="all">All technologies</option>
+      </select>
+    </div>
+
+    <section id="projects-grid" class="grid" aria-live="polite">
+      <!-- cards injected by script.js -->
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aarón D. Apaza</p>
+      <p><a href="references.html">References</a></p>
+    </div>
+  </footer>
+</body>
+</html>

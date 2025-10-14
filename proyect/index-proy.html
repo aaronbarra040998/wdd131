@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aarón A. — Portfolio</title>
+  <meta name="description" content="Portfolio of Aarón A. — WDD131 projects and mini-tutorials." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1><a href="index.html">Aarón D. Apaza</a></h1>
+        <p>Portfolio — WDD131</p>
+      </div>
+
+      <!-- Header Controls: Dark theme + Download CV -->
+      <div class="header-controls">
+        <button id="theme-toggle" class="btn ghost" aria-pressed="false" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="text"> Dark</span>
+        </button>
+        <a href="assets/CV_Aaron_Apaza.pdf" download class="btn primary">
+          <span>📥</span>
+          <span class="text">Download CV</span>
+        </a>
+      </div>
+
+      <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="main-nav" aria-hidden="true" id="main-nav">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume & Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page" role="main">
+    <h2>Hello — I'm Aarón</h2>
+    <p class="lead">Frontend developer in training. This portfolio showcases projects from WDD131 course and practical mini-tutorials.</p>
+
+    <div class="hero-cards">
+      <article class="card">
+        <h3>Objective</h3>
+        <small>Demonstrate competencies in HTML, CSS and JavaScript, with emphasis on accessibility and performance.</small>
+      </article>
+      <article class="card">
+        <h3>Tech Stack</h3>
+        <small>HTML5, modern CSS (variables), JavaScript (ES6+), GitHub Pages.</small>
+      </article>
+      <article class="card">
+        <h3>Projects</h3>
+        <small><a href="projects.html">View projects list</a></small>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aarón D. Apaza</p>
+      <p><a href="references.html">References</a></p>
+    </div>
+  </footer>
+</body>
+</html>
