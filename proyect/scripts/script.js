@@ -2,6 +2,7 @@
  * proyect/script.js
  * Portfolio JavaScript - Enhanced with dark theme, search functionality
  * Features: Project filtering, modal system, theme switching, contact form
+ * Optimized for performance with fetchpriority and srcset
  */
 
 'use strict';
@@ -43,9 +44,9 @@ const projects = [
     short: 'Arequipa page with wind chill calculation.',
     description: 'Using <picture> for responsive images and wind chill calculation in JS.',
     tech: ['HTML','JavaScript'],
-    thumb: '../images/Arequipa1_11zon.jpg',
+    thumb: '../images/Arequipa1_11zon.webp',
     imgs: [
-      '../images/Arequipa1_11zon.jpg',
+      '../images/Arequipa1_11zon.webp',
       '../images/plaza-arms-arequipa_11zon.jpg',
       '../images/war_place_aqp_11zon.webp'
     ],
@@ -69,12 +70,23 @@ const $$ = s => Array.from(document.querySelectorAll(s));
 
 /**
  * PROJECT CARD TEMPLATE
- * Generates HTML for project cards
+ * Generates HTML for project cards with performance optimizations
+ * MODIFICACIÓN: Solo aplica lazy loading a imágenes fuera del viewport inicial
  */
-function cardTemplate(p){
+function cardTemplate(p, index){
+  const isAboveFold = index < 3; // Primeros 3 proyectos visibles sin scroll
+  
   return `
     <article class="project-card" data-id="${p.id}" tabindex="0" aria-labelledby="${p.id}-title">
-      <img src="${p.thumb}" alt="${p.title} thumbnail" loading="lazy" width="800" height="450" srcset="${p.thumb} 1x">
+      <img 
+        src="${p.thumb}" 
+        alt="${p.title} thumbnail" 
+        ${isAboveFold ? '' : 'loading="lazy"'}
+        width="478"
+        height="299"
+        srcset="${p.thumb} 478w, ${p.thumb} 800w"
+        sizes="(max-width: 768px) 100vw, 478px"
+      >
       <div class="card-body">
         <h3 id="${p.id}-title">${p.title}</h3>
         <p class="short">${p.short}</p>
@@ -127,7 +139,7 @@ function renderProjects(list){
     return;
   }
   
-  grid.innerHTML = list.map(cardTemplate).join('');
+  grid.innerHTML = list.map((p, index) => cardTemplate(p, index)).join('');
 }
 
 /**
