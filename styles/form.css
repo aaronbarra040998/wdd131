@@ -242,7 +242,7 @@ textarea {
     min-width: 150px;
     background: white;
     position: relative;
-    user-select: none;
+    /* user-select: none; */
 }
 
 .checkbox-option:hover {
