@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Plan - Aarón D. Apaza Portfolio</title>
+  <meta name="description" content="Website planning document for developer portfolio project">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/siteplan.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Website Planning Document</h1>
+      <p><strong>Project:</strong> Aarón D. Apaza - Developer Portfolio</p>
+      <p><strong>File:</strong> project/siteplan.html</p>
+    </header>
+
+    <!-- Site Name -->
+    <section>
+      <h2>Site Name</h2>
+      <p><strong>Aarón D. Apaza - Developer Portfolio</strong></p>
+      <p>This name clearly identifies the site as a professional portfolio for Aarón D. Apaza, focusing on his work as a software developer. It's straightforward and professional for potential employers and clients.</p>
+    </section>
+
+    <!-- Site Purpose -->
+    <section>
+      <h2>Site Purpose</h2>
+      <p>The site will serve as a professional portfolio showcasing web development projects, technical skills, and professional experience. It will provide:</p>
+      <ul>
+        <li>A gallery of completed projects with descriptions and technologies used</li>
+        <li>Professional resume and work experience</li>
+        <li>Contact information and inquiry form</li>
+        <li>Information about technical skills and competencies</li>
+      </ul>
+    </section>
+
+    <!-- Scenarios -->
+    <section>
+      <h2>Scenarios</h2>
+      <p>Target audience questions that the site will answer:</p>
+      <ul>
+        <li>"What web development projects has Aarón completed and what technologies were used?"</li>
+        <li>"How can I contact Aarón for potential job opportunities or collaborations?"</li>
+        <li>"What is Aarón's professional background and technical skill set?"</li>
+        <li>"Can I see examples of responsive web design and modern development practices?"</li>
+      </ul>
+    </section>
+
+    <!-- Color Schema -->
+    <section>
+      <h2>Color Schema</h2>
+      <p>Selected colors for both light and dark themes with their planned usage:</p>
+      
+      <div class="theme-comparison">
+        <!-- Light Theme -->
+        <div class="theme-section light-theme">
+          <h3>Light Theme</h3>
+          <div class="color-swatch" style="background: #0ea5e9">#0ea5e9<br>Primary</div>
+          <div class="color-swatch" style="background: #3b82f6">#3b82f6<br>Gradient</div>
+          <div class="color-swatch" style="background: #f59e0b">#f59e0b<br>Accent</div>
+          <div class="color-swatch" style="background: #0f172a; color: white">#0f172a<br>Text</div>
+          <div class="color-swatch" style="background: #f8fafc; color: #0f172a">#f8fafc<br>Background</div>
+          <div class="color-swatch" style="background: #f1f5f9; color: #0f172a">#f1f5f9<br>Muted</div>
+          
+          <p><strong>Light Theme Usage:</strong></p>
+          <ul>
+            <li><strong>#0ea5e9 (Primary):</strong> Headings, primary buttons, links</li>
+            <li><strong>#3b82f6 (Gradient):</strong> Background gradients, accents</li>
+            <li><strong>#f59e0b (Accent):</strong> Call-to-action buttons, highlights</li>
+            <li><strong>#0f172a (Text):</strong> Primary text content</li>
+            <li><strong>#f8fafc (Background):</strong> Main background color</li>
+            <li><strong>#f1f5f9 (Muted):</strong> Secondary backgrounds, borders</li>
+          </ul>
+        </div>
+
+        <!-- Dark Theme -->
+        <div class="theme-section dark-theme">
+          <h3 style="color: #60a5fa;">Dark Theme</h3>
+          <div class="dark-swatch" style="background: #60a5fa">#60a5fa<br>Primary</div>
+          <div class="dark-swatch" style="background: #3b82f6">#3b82f6<br>Gradient</div>
+          <div class="dark-swatch" style="background: #f59e0b">#f59e0b<br>Accent</div>
+          <div class="dark-swatch" style="background: #f1f5f9; color: #0f172a">#f1f5f9<br>Text</div>
+          <div class="dark-swatch" style="background: #0f172a; color: #f1f5f9">#0f172a<br>Background</div>
+          <div class="dark-swatch" style="background: #1e293b; color: #f1f5f9">#1e293b<br>Surface</div>
+          
+          <p><strong>Dark Theme Usage:</strong></p>
+          <ul>
+            <li><strong>#60a5fa (Primary):</strong> Headings, primary buttons, links</li>
+            <li><strong>#3b82f6 (Gradient):</strong> Background gradients, accents</li>
+            <li><strong>#f59e0b (Accent):</strong> Call-to-action buttons, highlights</li>
+            <li><strong>#f1f5f9 (Text):</strong> Primary text content</li>
+            <li><strong>#0f172a (Background):</strong> Main background color</li>
+            <li><strong>#1e293b (Surface):</strong> Cards, containers, surfaces</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="theme-feature">
+        <p><strong>Theme Switching Feature:</strong> The site will include a theme toggle button that allows users to switch between light and dark themes. The preference will be saved in localStorage for persistence across sessions.</p>
+      </div>
+
+      <p><strong>Additional Dark Theme Colors:</strong></p>
+      <ul>
+        <li><strong>#334155 (Muted):</strong> Borders, secondary elements in dark mode</li>
+        <li><strong>#94a3b8 (Muted Text):</strong> Secondary text in dark mode</li>
+        <li><strong>Gradient:</strong> linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)</li>
+      </ul>
+    </section>
+
+    <!-- Typography -->
+    <section>
+      <h2>Typography</h2>
+      <p>Selected fonts and their application:</p>
+      
+      <p><strong>Poppins</strong> - Used for all headings (H1, H2, H3, H4, H5, H6)</p>
+      <p style="font-family: 'Poppins', sans-serif; font-weight: 700;">Example Heading Text - Poppins Bold</p>
+      
+      <p><strong>Inter</strong> - Used for body text, paragraphs, and navigation</p>
+      <p style="font-family: 'Inter', sans-serif;">Example body text - Inter Regular. This font provides excellent readability for longer content sections.</p>
+    </section>
+
+    <!-- Wireframe -->
+    <section>
+      <h2>Wireframe</h2>
+      <p>Home page layout sketches for mobile and desktop views:</p>
+      
+      <!-- Carrusel para wireframes con imágenes locales -->
+      <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <!-- Slide 1: Mobile Home -->
+          <div class="carousel-item">
+            <img src="images/1-1.png" alt="Mobile Home Page Wireframe" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Mobile Home Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Desktop Projects Wireframe - index.html
+            </div>
+          </div>
+          
+          <!-- Slide 2: Desktop Home -->
+          <div class="carousel-item">
+            <img src="images/1-2.png" alt="Desktop Home Page Wireframe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Desktop Home Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Desktop Projects Wireframe - projects.html
+            </div>
+          </div>
+          
+          <!-- Slide 3: Mobile Projects -->
+          <div class="carousel-item">
+            <img src="images/1-4.png" alt="Mobile Projects Page Wireframe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Mobile Projects Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Desktop Projects Wireframe - resume.html
+            </div>
+          </div>
+          
+          <!-- Slide 4: Desktop Projects -->
+          <div class="carousel-item">
+            <img src="images/1-3.png" alt="Desktop Projects Page Wireframe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Desktop Projects Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Desktop Projects Wireframe - references.html
+            </div>
+          </div>
+          
+          <!-- Slide 5: Mobile Contact -->
+          <div class="carousel-item">
+            <img src="images/2-1.png" alt="Mobile Contact Page Wireframe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Mobile Contact Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Mobile View - index.html
+            </div>
+          </div>
+          
+          <!-- Slide 6: Desktop Contact -->
+          <div class="carousel-item">
+            <img src="images/2-4.png" alt="Desktop Contact Page Wireframe"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Desktop Contact Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Mobile View - Projects.html
+            </div>
+          </div>
+          
+          <!-- Slide 7: Additional Image 1 -->
+          <div class="carousel-item">
+            <img src="images/2-2.png" alt="Additional Wireframe View"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Additional Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Mobile View - resume.html
+            </div>
+          </div>
+          
+          <!-- Slide 8: Additional Image 2 -->
+          <div class="carousel-item">
+            <img src="images/2-3.png" alt="Additional Wireframe View"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-loading" style="display:none;">
+              Additional Wireframe - Image not found
+            </div>
+            <div class="carousel-caption">
+              Mobile View - preferences.html
+            </div>
+          </div>
+        </div> <!-- CIERRE CORRECTO de carousel-inner -->
+        
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn">Previous</button>
+          <button class="carousel-btn" id="nextBtn">Next</button>
+        </div>
+        
+        <div class="carousel-indicators" id="indicators">
+          <!-- Los indicadores se generan con JavaScript -->
+        </div>
+      </div> <!-- CIERRE de carousel -->
+
+      <div class="wireframe-container">
+        <div class="wireframe">
+          <h3>Mobile Layout Features</h3>
+          <ul>
+            <li>Sticky header with hamburger menu</li>
+            <li>Single column layout for all content</li>
+            <li>Touch-friendly buttons and controls</li>
+            <li>Vertical scrolling navigation</li>
+            <li>Optimized images and lazy loading</li>
+            <li>Bottom navigation for key sections</li>
+          </ul>
+        </div>
+        
+        <div class="wireframe">
+          <h3>Desktop Layout Features</h3>
+          <ul>
+            <li>Full-width header with horizontal navigation</li>
+            <li>Multi-column grid layouts</li>
+            <li>Sidebar components for filters and navigation</li>
+            <li>Hover effects and interactive elements</li>
+            <li>Modal windows for project details</li>
+            <li>Advanced filtering and search functionality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Naming Conventions -->
+    <section>
+      <h2>File Naming Conventions</h2>
+      <p>All files and folders will follow course naming conventions (lowercase, hyphens):</p>
+      <div class="file-list">
+        project/siteplan.html<br>
+        project/index.html<br>
+        project/projects.html<br>
+        project/resume.html<br>
+        project/references.html<br>
+        project/styles/styles.css<br>
+        project/scripts/script.js<br>
+        project/images/<br>
+        project/assets/<br>
+        project/wireframes/ (wireframe images)
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/scripts/siteplan.js"></script>
+</body>
+</html>
